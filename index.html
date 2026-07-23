@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheers To Forever</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Cormorant Garamond', serif;
+    overflow:hidden;
+    color:white;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:url("proposal.jpg") center center/cover no-repeat;
+    filter:brightness(.35);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+    max-width:700px;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(8px);
+    border:2px solid #D4AF37;
+    border-radius:25px;
+    padding:50px;
+    box-shadow:0 0 30px rgba(212,175,55,.4);
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    color:#D4AF37;
+    font-size:72px;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#F7E7A9;
+    margin-bottom:25px;
+    letter-spacing:2px;
+}
+
+p{
+    font-size:22px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:35px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#D4AF37;
+    color:black;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.footer{
+    margin-top:30px;
+    color:#F7E7A9;
+    font-style:italic;
+}
+
+.heart{
+    position:absolute;
+    color:#D4AF37;
+    animation:float linear infinite;
+    opacity:.8;
+}
+
+@keyframes float{
+
+from{
+transform:translateY(110vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="overlay">
+
+<div class="card">
+
+<h1>Cheers To Forever</h1>
+
+<h2>Every Love Story is Beautiful...</h2>
+
+<p>
+
+From the moment our paths crossed,
+I knew life would never be the same.
+
+<br><br>
+
+Thank you for saying
+
+<strong>YES ❤️</strong>
+
+<br><br>
+
+I promise to love you,
+choose you,
+and stand beside you...
+
+Today,
+Tomorrow,
+and Forever.
+
+</p>
+
+<button onclick="playSong()">
+
+🎵 Play Our Song
+
+</button>
+
+<div class="footer">
+
+"And so our adventure begins..."
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function playSong(){
+
+window.open("https://youtu.be/5ZD9_spFojY?si=0USunYyxOv9im-Yt","_blank");
+
+}
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(18+Math.random()*25)+"px";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,350);
+
+</script>
+
+</body>
+</html>
